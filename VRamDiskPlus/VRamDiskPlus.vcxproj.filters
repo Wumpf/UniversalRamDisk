@@ -15,15 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="pch.cpp">
+    <ClCompile Include="VRamDiskPlus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="VRamDiskPlus.cpp">
+    <ClCompile Include="DokanOperationsImpl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
