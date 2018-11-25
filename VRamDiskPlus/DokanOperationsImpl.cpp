@@ -1,7 +1,15 @@
 #include "dokan/dokan.h"
-#include <stdio.h>
+#include "Log.h"
+#include "GlobalMountEvent.h"
+#include "VRamDiskPlus.h"
 
-#define REPORT_CALL() do { printf("%s\n", __FUNCTION__); } while(false)
+#define ENABLE_CALL_REPORTS 0
+
+#if ENABLE_CALL_REPORTS
+	#define REPORT_CALL(...) do { LogCommaSeparated(__FUNCTION__, __VA_ARGS__); } while(false)
+#else
+	#define REPORT_CALL(...)
+#endif
 
 NTSTATUS DOKAN_CALLBACK VRAMDP_CreateFile(
 	LPCWSTR FileName,
@@ -13,7 +21,7 @@ NTSTATUS DOKAN_CALLBACK VRAMDP_CreateFile(
 	ULONG CreateOptions,
 	PDOKAN_FILE_INFO DokanFileInfo)
 {
-	REPORT_CALL();
+	REPORT_CALL(FileName);
 	return STATUS_SUCCESS;
 }
 
@@ -197,12 +205,14 @@ NTSTATUS DOKAN_CALLBACK VRAMDP_GetVolumeInformation(
 NTSTATUS DOKAN_CALLBACK VRAMDP_Mounted(PDOKAN_FILE_INFO DokanFileInfo)
 {
 	REPORT_CALL();
+	g_mountEvent->SignalMounted();
 	return STATUS_SUCCESS;
 }
 
 NTSTATUS DOKAN_CALLBACK VRAMDP_Unmounted(PDOKAN_FILE_INFO DokanFileInfo)
 {
 	REPORT_CALL();
+	g_mountEvent->SignalUnmounted();
 	return STATUS_SUCCESS;
 }
 
