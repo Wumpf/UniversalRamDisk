@@ -1,8 +1,8 @@
 #include "gtest/gtest.h"
 #include <Windows.h>
 
-#include "../VRamDiskPlusLib/VRamDiskPlus.h"
-#include "../VRamDiskPlusLib/GlobalMountEvent.h"
+#include "../UniversalRamDiskLib/UniversalRamDisk.h"
+#include "../UniversalRamDiskLib/GlobalMountEvent.h"
 
 class CommandLineTests : public ::testing::Test
 {
@@ -15,7 +15,7 @@ protected:
 		memset(&startupInfo, 0, sizeof(startupInfo));
 		startupInfo.cb = sizeof(startupInfo);
 
-		wchar_t commandLine[] = L"VRamDiskPlus.exe";
+		wchar_t commandLine[] = L"UniversalRamDisk.exe";
 		BOOL result = CreateProcess(nullptr, commandLine, nullptr, nullptr, FALSE, CREATE_NEW_CONSOLE | CREATE_NEW_PROCESS_GROUP, nullptr, nullptr, &startupInfo, &s_processInformation);
 		if (!result)
 			printf("CreateProcess failed (%d).\n", GetLastError());
@@ -42,7 +42,6 @@ protected:
 private:
 	static PROCESS_INFORMATION s_processInformation;
 };
-
 PROCESS_INFORMATION CommandLineTests::s_processInformation;
 
 TEST_F(CommandLineTests, DriveIsMounted)

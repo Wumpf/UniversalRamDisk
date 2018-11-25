@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VRamDiskPlus", "VRamDiskPlus\VRamDiskPlus.vcxproj", "{E9BA4C42-A47D-4F10-A0A2-CCD9ECB76FE8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UniversalRamDisk", "UniversalRamDisk\UniversalRamDisk.vcxproj", "{E9BA4C42-A47D-4F10-A0A2-CCD9ECB76FE8}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VRamDiskPlusTests", "VRamDiskPlusTests\VRamDiskPlusTests.vcxproj", "{8B78E716-BFC0-43A8-A155-AF9A1DE1390C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UniversalRamDiskTests", "UniversalRamDiskTests\UniversalRamDiskTests.vcxproj", "{8B78E716-BFC0-43A8-A155-AF9A1DE1390C}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VRamDiskPlusLib", "VRamDiskPlusLib\RamDiskPlusLib.vcxproj", "{4FD5468F-4411-41FE-8FD7-DC3E71E8C8C2}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UniversalRamDiskLib", "UniversalRamDiskLib\UniversalRamDiskLib.vcxproj", "{4FD5468F-4411-41FE-8FD7-DC3E71E8C8C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

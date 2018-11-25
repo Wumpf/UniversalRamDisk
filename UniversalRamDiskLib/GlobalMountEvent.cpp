@@ -46,5 +46,5 @@ void GlobalMountEvent::WaitForMounted()
 std::wstring GlobalMountEvent::GetEventName(wchar_t driveLetter)
 {
 	driveLetter = towlower(driveLetter);
-	return std::wstring(L"Global\\VRamDiskPlus_Mount_") + driveLetter;
+	return std::wstring(L"Global\\UniversalRamDisk_Mount_") + driveLetter;
 }

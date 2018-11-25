@@ -25,6 +25,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <ProjectName>UniversalRamDiskTests</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -42,15 +43,15 @@
     <ClCompile Include="CommandLineTests.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VRamDiskPlusLib\RamDiskPlusLib.vcxproj">
-      <Project>{4fd5468f-4411-41fe-8fd7-dc3e71e8c8c2}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\VRamDiskPlus\VRamDiskPlus.vcxproj">
-      <Project>{e9ba4c42-a47d-4f10-a0a2-ccd9ecb76fe8}</Project>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\UniversalRamDiskLib\UniversalRamDiskLib.vcxproj">
+      <Project>{4fd5468f-4411-41fe-8fd7-dc3e71e8c8c2}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\UniversalRamDisk\UniversalRamDisk.vcxproj">
+      <Project>{e9ba4c42-a47d-4f10-a0a2-ccd9ecb76fe8}</Project>
+    </ProjectReference>
   </ItemGroup>
   <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
@@ -87,7 +88,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>dokan1.lib;$(SolutionDir)VRamDiskPlusLib/$(Platform)/$(Configuration)/*.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>dokan1.lib;$(SolutionDir)$(SolutionName)Lib/$(Platform)/$(Configuration)/*.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -120,7 +121,7 @@
       <SubSystem>Console</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <AdditionalDependencies>dokan1.lib;$(SolutionDir)VRamDiskPlusLib/$(Platform)/$(Configuration)/*.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>dokan1.lib;$(SolutionDir)$(SolutionName)Lib/$(Platform)/$(Configuration)/*.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

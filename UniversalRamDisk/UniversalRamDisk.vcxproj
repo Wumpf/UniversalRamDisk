@@ -24,7 +24,7 @@
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>VRamDiskPlus</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
-    <ProjectName>VRamDiskPlus</ProjectName>
+    <ProjectName>UniversalRamDisk</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -171,7 +171,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VRamDiskPlusLib\RamDiskPlusLib.vcxproj">
+    <ProjectReference Include="..\UniversalRamDiskLib\UniversalRamDiskLib.vcxproj">
       <Project>{4fd5468f-4411-41fe-8fd7-dc3e71e8c8c2}</Project>
     </ProjectReference>
   </ItemGroup>
