@@ -3,11 +3,13 @@
   <ItemGroup>
     <ClCompile Include="GlobalMountEvent.cpp" />
     <ClCompile Include="DokanOperationsImpl.cpp" />
+    <ClCompile Include="Mounting.cpp" />
     <ClCompile Include="UniversalRamDisk.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GlobalMountEvent.h" />
     <ClInclude Include="Log.h" />
+    <ClInclude Include="Mounting.h" />
     <ClInclude Include="UniversalRamDisk.h" />
   </ItemGroup>
 </Project>

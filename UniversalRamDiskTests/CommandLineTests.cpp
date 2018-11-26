@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 #include <Windows.h>
 
-#include "../UniversalRamDiskLib/UniversalRamDisk.h"
+#include "../UniversalRamDiskLib/Mounting.h"
 #include "../UniversalRamDiskLib/GlobalMountEvent.h"
 
 class CommandLineTests : public ::testing::Test
@@ -33,7 +33,7 @@ protected:
 		TerminateProcess(s_processInformation.hProcess, 0);
 		WaitForSingleObject(s_processInformation.hProcess, INFINITE);
 
-		auto rootPath = DriveLetterToRootPath(s_driveLetter);
+		auto rootPath = MountedDisk::DriveLetterToRootPath(s_driveLetter);
 		EXPECT_EQ(GetDriveType(rootPath.c_str()), DRIVE_NO_ROOT_DIR);
 	}
 
@@ -46,6 +46,6 @@ PROCESS_INFORMATION CommandLineTests::s_processInformation;
 
 TEST_F(CommandLineTests, DriveIsMounted)
 {
-	auto rootPath = DriveLetterToRootPath(s_driveLetter);
+	auto rootPath = MountedDisk::DriveLetterToRootPath(s_driveLetter);
 	EXPECT_EQ(GetDriveType(rootPath.c_str()), DRIVE_REMOVABLE);
 }

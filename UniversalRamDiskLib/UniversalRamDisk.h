@@ -1,9 +1,11 @@
 #pragma once
 
-#include <string>
+// The RAM disk itself.
+// Storage, filesystem, etc.
+class UniversalRamDisk
+{
+public:
+	UniversalRamDisk();
+	~UniversalRamDisk();
+};
 
-void CreateDiskAndRun(wchar_t driveLetter);
-
-inline std::wstring DriveLetterToRootPath(wchar_t driveLetter) { return std::wstring(1, driveLetter) + L":/"; }
-
-extern class GlobalMountEvent* g_mountEvent;

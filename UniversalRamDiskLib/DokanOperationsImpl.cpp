@@ -2,6 +2,7 @@
 #include "Log.h"
 #include "GlobalMountEvent.h"
 #include "UniversalRamDisk.h"
+#include "Mounting.h"
 
 #define ENABLE_CALL_REPORTS 0
 
@@ -205,14 +206,14 @@ NTSTATUS DOKAN_CALLBACK URAMD_GetVolumeInformation(
 NTSTATUS DOKAN_CALLBACK URAMD_Mounted(PDOKAN_FILE_INFO DokanFileInfo)
 {
 	REPORT_CALL();
-	g_mountEvent->SignalMounted();
+	MountedDisk::GetMountEvent()->SignalMounted();
 	return STATUS_SUCCESS;
 }
 
 NTSTATUS DOKAN_CALLBACK URAMD_Unmounted(PDOKAN_FILE_INFO DokanFileInfo)
 {
 	REPORT_CALL();
-	g_mountEvent->SignalUnmounted();
+	MountedDisk::GetMountEvent()->SignalUnmounted();
 	return STATUS_SUCCESS;
 }
 
